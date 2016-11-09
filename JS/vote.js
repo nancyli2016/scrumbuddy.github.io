@@ -52,7 +52,6 @@ $(document).ready(function() {
          {
             // Not pressed again
             // Raise other button if another had been pressed
-            if (pressed != "" )
             {
                $(pressed).animate({
                   top:"-=5"
@@ -75,6 +74,7 @@ $(document).ready(function() {
             pointRef.set(points);
             $("h1").html("Your vote is ".concat(points));
          }
+
       });
       
       i++;
