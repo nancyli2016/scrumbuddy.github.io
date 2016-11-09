@@ -52,7 +52,7 @@ $(document).ready(function() {
          {
             // Not pressed again
             // Raise other button if another had been pressed
-            if (pressed != "" && localStorage.getItem("currentPressedButton") != "")
+            if (pressed != "" )
             {
                $(pressed).animate({
                   top:"-=5"
@@ -75,8 +75,6 @@ $(document).ready(function() {
             pointRef.set(points);
             $("h1").html("Your vote is ".concat(points));
          }
-         localStorage.setItem("currentPressedButton", pressed);
-
       });
       
       i++;
@@ -107,15 +105,13 @@ $(document).ready(function() {
          // Remove previous vote info
          $("h1").html("Your vote is ");
          
-         var  pressedButton = localStorage.getItem("currentPressedButton");
-
-         if (pressedButton != ""){           
-            $( pressedButton).animate({
+         if (pressed != ""){           
+            $( pressed).animate({
                   top:"-=5"
                }), 1, function(){};
                
-            $(pressedButton).css("color", "#000000");
-            localStorage.setItem("currentPressedButton", "");
+            $(pressed).css("color", "#000000");
+            pressed = "";
           }
       }
    }); 
